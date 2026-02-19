@@ -1,8 +1,12 @@
-describe('homework Automation Sauce Demo', () => {
-  it('Berhasil Login dan Sortir Produk A-Z', () => {
-    // 1. Kunjungi website
-    cy.visit('https://www.saucedemo.com/')
+describe('Homework Automation Sauce Demo', () => {
 
+  // Hook yang dijalankan sebelum setiap test case (it block)
+  beforeEach(() => {
+    // 1. Kunjungi website utama
+    cy.visit('https://www.saucedemo.com/')
+  })
+
+  it('Berhasil Login dan Sortir Produk A-Z', () => {
     // 2. Login
     cy.get('[data-test="username"]').type('standard_user')
     cy.get('[data-test="password"]').type('secret_sauce')
